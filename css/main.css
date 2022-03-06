@@ -365,7 +365,7 @@ nav {
     transform: translate(-50%, -50%);
     width: 1360px;
     height: 665px;
-    background-image: url(/strona/src/img/logo_stefanialazar_R\ 2.png);
+    background-image: url(../src/img/logo_stefanialazar_R\ 2.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
