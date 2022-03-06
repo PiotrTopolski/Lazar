@@ -6,10 +6,11 @@
   text-decoration: none;
 }
 .content {
-  max-width: 1440px;
+  max-width: 1460px;
   margin: 0 auto;
   font-family: 'Antic', sans-serif;
   position: relative;
+  overflow: hidden;
 }
 .header {
   position: fixed;
@@ -24,13 +25,19 @@
   justify-content: space-between;
 }
 .logo {
-  max-height: 80px;
   padding: 5px;
+  height: 80px;
+}
+.logo__container {
+  height: 100%;
+}
+.logo__link {
+  display: block;
+  height: 100%;
 }
 .logo__link img {
   display: block;
-  height: 80px;
-  max-height: 100%;
+  height: 100%;
 }
 .main-menu__nav {
   display: flex;
@@ -221,8 +228,49 @@ nav {
   transform: none;
 }
 
+.about {
+  margin-top: 90px;
+}
 
+.about p {
+  padding: 5px;
+  margin-bottom: 20px;
+}
 
+.--t_white {
+  color: #ffffff;
+}
+.--t_orange {
+  color: #F4943F;
+}
+.--b_orange {
+  background-color: #F4943F;
+}
+.--b_pink {
+  background-color: #EA3E66;
+}
+.portfolio {
+  margin-top: 90px;
+}
+.portfolio__container {
+  display: flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.portfolio__item {
+  height: 100%;
+  max-height: 380px;
+}
+.portfolio__item picture {
+  display: block;
+  height: 100%;
+}
+.portfolio__item picture img {
+  height: 100%;
+  max-width: 100%;
+}
 
 
 
@@ -264,6 +312,7 @@ nav {
     padding-top: 0;
     background-color: #ffffff;
     transform: translate(0);
+    transition: transform 0 cubic-bezier(0.77,0.2,0.05,1.0);
   }
   #menuToggle {
     display: flex;
@@ -272,19 +321,14 @@ nav {
   }
   #menu li {
     margin: 30px;
-    transition-delay: 2s;
+    transition-delay: 0;
   }
   .gallery {
     margin-top: 0;
   }
   .logo {
-    max-height: 100%;
-    padding: 40px;
-  }
-  .logo__link img {
-    display: block;
-    height: auto;
-    max-height: 100%;
+    height: 130px;
+    margin: 40px 0;
   }
   .gallery__row {
     margin-bottom: 20px;
@@ -295,7 +339,7 @@ nav {
     "img1 img3 img2 img4";
   }
   .gallery__row:nth-of-type(2) {
-    grid-template-columns: .9fr 2fr .9fr .9fr;
+    grid-template-columns: .9fr 2fr .9fr .9fr .1fr;
     grid-template-areas:
     "img2 img1 img3 img4";
   }
@@ -303,5 +347,37 @@ nav {
     grid-template-columns: 1.2fr 2fr .9fr .9fr;
     grid-template-areas:
     "img2 img3 img1";
+  }
+  .about {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(265px, 340px) minmax(265px, 340px);
+    gap: 70px;
+    margin-top: 0;
+    justify-content: center;
+    font-family: 'Bellota Text', cursive;
+  }
+  .about::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 37%;
+    transform: translate(-50%, -50%);
+    width: 1360px;
+    height: 665px;
+    background-image: url(/strona/src/img/logo_stefanialazar_R\ 2.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .about p {
+    padding: 5px 0;
+  }
+  .about .--pd_95 {
+    padding-bottom: 95px;
+  }
+  .portfolio {
+    margin-top: 0;
   }
 }
