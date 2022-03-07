@@ -8,9 +8,8 @@
 .content {
   max-width: 1460px;
   margin: 0 auto;
-  font-family: 'Antic', sans-serif;
+  font-family: 'Bellota Text', cursive;
   position: relative;
-  overflow: hidden;
 }
 .header {
   position: fixed;
@@ -243,11 +242,20 @@ nav {
 .--t_orange {
   color: #F4943F;
 }
-.--b_orange {
-  background-color: #F4943F;
+.--b_orange-1 {
+  background-color: rgba(249, 179, 50, 0.9);
 }
-.--b_pink {
-  background-color: #EA3E66;
+.--b_orange-2 {
+  background-color: rgba(244, 148, 63, 0.9);
+}
+.--b_orange-3 {
+  background-color: rgba(240, 110, 80, 0.9);
+}
+.--b_pink-1 {
+  background-color: #E8316C;
+}
+.--b_pink-2 {
+  background-color: rgba(229, 24, 119, 0.9);
 }
 .portfolio {
   margin-top: 90px;
@@ -272,6 +280,38 @@ nav {
   max-width: 100%;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 5px;
+}
+.footer span {
+  padding: 10px 0;
+}
+.footer a {
+  padding: 10px 0;
+  color: #000000;
+  text-decoration: underline;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 40px 0;
+}
+.contact span {
+  text-transform: uppercase;
+  color: #E51877;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.contact a {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
 
 
@@ -305,6 +345,7 @@ nav {
     flex-direction: row;
     position: static;
     width: 100%;
+    max-width: 1160px;
     height: auto;
     box-shadow: none;
     margin: 0;
@@ -320,15 +361,22 @@ nav {
     position: static;
   }
   #menu li {
-    margin: 30px;
-    transition-delay: 0;
+    margin: 3px 11px;
+    padding: 0;
+    transition-delay: 0s;
+    border: 1px solid transparent;
+  }
+  #menu li:hover {
+    border-color: #000000;
+    transition: .3s;
   }
   .gallery {
     margin-top: 0;
   }
   .logo {
-    height: 130px;
-    margin: 40px 0;
+    height: 234px;
+    margin: 0;
+    padding: 0;
   }
   .gallery__row {
     margin-bottom: 20px;
@@ -353,7 +401,7 @@ nav {
     display: grid;
     grid-template-columns: minmax(265px, 340px) minmax(265px, 340px);
     gap: 70px;
-    margin-top: 0;
+    margin-top: 50px;
     justify-content: center;
     font-family: 'Bellota Text', cursive;
   }
@@ -379,5 +427,31 @@ nav {
   }
   .portfolio {
     margin-top: 0;
+  }
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .footer span {
+    padding: 0;
+  }
+  .footer a {
+    padding: 0;
+  }
+  .top-border {
+    height: 10px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F06E50;
+  }
+  .contact {
+    padding: 180px 0 0 0;
   }
 }
