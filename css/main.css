@@ -11,12 +11,37 @@
   font-family: 'Bellota Text', cursive;
   position: relative;
 }
+.content.--orange-bg {
+  position: relative;
+}
+.content.--orange-bg::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: #F9B232;
+  z-index: -1;
+}
+.content.--pink-bg::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: rgba(229, 24, 120, 0.7);
+  z-index: -1;
+}
 .header {
   position: fixed;
   top: 0;
-  background-color: #ffffff;
   width: 100%;
   height: 90px;
+  z-index: 1;
 }
 .header__wrapper {
   display: flex;
@@ -74,82 +99,62 @@
 .gallery {
   margin-top: 90px;
 }
-.gallery__row {
-  display: grid;
-}
-.gallery__row:first-of-type {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "img1 img1"
-    "img2 img2"
-    "img3 img4";
-}
-.gallery__row:first-of-type .gallery__item:nth-of-type(1) {
-  grid-area: img1;
-}
-.gallery__row:first-of-type .gallery__item:nth-of-type(2) {
-  grid-area: img3;
-}
-.gallery__row:first-of-type .gallery__item:nth-of-type(3) {
-  grid-area: img2;
-}
-.gallery__row:first-of-type .gallery__item:nth-of-type(4) {
-  grid-area: img4;
-}
-.gallery__row:nth-of-type(2) {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "img1 img1"
-    "img2 img3"
-    "img4 img4";
-}
-.gallery__row:nth-of-type(2) .gallery__item:nth-of-type(1) {
-  grid-area: img2;
-}
-.gallery__row:nth-of-type(2) .gallery__item:nth-of-type(2) {
-  grid-area: img1;
-}
-.gallery__row:nth-of-type(2) .gallery__item:nth-of-type(3) {
-  grid-area: img3;
-}
-.gallery__row:nth-of-type(2) .gallery__item:nth-of-type(4) {
-  grid-area: img4;
-}
-.gallery__row:nth-of-type(3) {
-  grid-template-columns: .9fr 1.1fr;
-  grid-template-areas:
-    "img1 img2"
-    "img3 img3";
-}
-.gallery__row:nth-of-type(3) .gallery__item:nth-of-type(1) {
-  grid-area: img2;
-}
-.gallery__row:nth-of-type(3) .gallery__item:nth-of-type(2) {
-  grid-area: img3;
-}
-.gallery__row:nth-of-type(3) .gallery__item:nth-of-type(3) {
-  grid-area: img1;
-}
-.gallery__item picture img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  cursor: pointer;
-  transition: .3s;
-}
-.gallery__item picture img:hover {
-  opacity: .9;
-}
-.portfolio-menu ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
+.column {
+  line-height: 0;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 14px;
+  -moz-column-count: 2;
+  -moz-column-gap: 14px;
+  column-count: 2;
+  column-gap: 5px;
 }
 
+.item {
+  position: relative;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.item img {
+  display: block;
+  width: 100%;
+}
+
+.item span {
+  position: absolute;
+  top: 100%;
+  transform: translateY(0);
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  color: #E51877;
+  opacity: 0;
+  transition: .3s;
+}
+
+.item:hover span {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.item:nth-of-type(1) {
+  order: 1;
+}
+.item:nth-of-type(2) {
+  order: 2;
+}
+.item:nth-of-type(3) {
+  order: 3;
+}
+.item:nth-of-type(4) {
+  order: 4;
+}
 
 
 
@@ -230,7 +235,6 @@ nav {
   margin: -50px 0 0 -50px;
   padding: 50px;
   padding-top: 50px;
-  background-color: #F5F6FA;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
@@ -262,27 +266,6 @@ nav {
   margin-bottom: 20px;
 }
 
-.--t_white {
-  color: #ffffff;
-}
-.--t_orange {
-  color: #F4943F;
-}
-.--b_orange-1 {
-  background-color: rgba(249, 179, 50, 0.9);
-}
-.--b_orange-2 {
-  background-color: rgba(244, 148, 63, 0.9);
-}
-.--b_orange-3 {
-  background-color: rgba(240, 110, 80, 0.9);
-}
-.--b_pink-1 {
-  background-color: #E8316C;
-}
-.--b_pink-2 {
-  background-color: rgba(229, 24, 119, 0.9);
-}
 .portfolio {
   margin-top: 90px;
 }
@@ -329,9 +312,10 @@ nav {
 }
 .contact span {
   text-transform: uppercase;
-  color: #E51877;
+  color: #FFCB14;
   margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 25px;
+  font-weight: bold;
 }
 .contact a {
   color: #000000;
@@ -345,7 +329,6 @@ nav {
   .header {
     position: static;
     top: 0;
-    background-color: #ffffff;
     width: 100%;
     height: auto;
   }
@@ -371,13 +354,11 @@ nav {
     flex-direction: row;
     position: static;
     width: 100%;
-    max-width: 1160px;
     height: auto;
     box-shadow: none;
     margin: 0;
     padding: 0;
     padding-top: 0;
-    background-color: #ffffff;
     transform: translate(0);
     transition: transform 0 cubic-bezier(0.77,0.2,0.05,1.0);
   }
@@ -396,32 +377,6 @@ nav {
     border-color: #000000;
     transition: .3s;
   }
-  .gallery {
-    margin-top: 0;
-  }
-  .logo {
-    height: 234px;
-    margin: 0;
-    padding: 0;
-  }
-  .gallery__row {
-    margin-bottom: 20px;
-  }
-  .gallery__row:first-of-type {
-    grid-template-columns: 1.1fr .9fr 2fr .9fr;
-    grid-template-areas:
-    "img1 img3 img2 img4";
-  }
-  .gallery__row:nth-of-type(2) {
-    grid-template-columns: .9fr 2fr .9fr .9fr .1fr;
-    grid-template-areas:
-    "img2 img1 img3 img4";
-  }
-  .gallery__row:nth-of-type(3) {
-    grid-template-columns: 1.2fr 2fr .9fr .9fr;
-    grid-template-areas:
-    "img2 img3 img1";
-  }
   .about {
     position: relative;
     display: grid;
@@ -430,20 +385,6 @@ nav {
     margin-top: 50px;
     justify-content: center;
     font-family: 'Bellota Text', cursive;
-  }
-  .about::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 37%;
-    transform: translate(-50%, -50%);
-    width: 1360px;
-    height: 665px;
-    background-image: url(../src/img/logo_stefanialazar_R\ 2.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -1;
   }
   .about p {
     padding: 5px 0;
@@ -480,6 +421,9 @@ nav {
   .contact {
     padding: 180px 0 0 0;
   }
+  .logo {
+    height: 230px;
+  }
   .logo.--portfolio .logo__link img {
     max-width: 744px;
   }
@@ -488,5 +432,17 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 50px 0;
+  }
+  .gallery {
+    margin-top: 140px;
+  }
+  .column {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    column-gap: 14px;
+  }
+  .item {
+    padding-top: 14px;
   }
 }
