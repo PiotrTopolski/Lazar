@@ -6,10 +6,11 @@
   text-decoration: none;
 }
 .content {
-  max-width: 1460px;
+  max-width: 2220px;
   margin: 0 auto;
   font-family: 'Bellota Text', cursive;
   position: relative;
+  min-height: 100vh;
 }
 .content.--orange-bg {
   position: relative;
@@ -33,8 +34,14 @@
   top: 0;
   left: 50%;
   margin-left: -50vw;
-  background-color: rgba(229, 24, 120, 0.7);
+  background-color: #ed62a3;
   z-index: -1;
+}
+.content.--pink-bg .header__wrapper {
+  background-color: #ed62a3;
+}
+.content.--pink-bg #menu {
+  background-color: #ed62a3;
 }
 .header {
   position: fixed;
@@ -47,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #F9B232;
 }
 .logo {
   padding: 5px;
@@ -97,22 +105,52 @@
   text-transform: uppercase;
 }
 .gallery {
-  margin-top: 90px;
-}
-.column {
-  line-height: 0;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 14px;
-  -moz-column-count: 2;
-  -moz-column-gap: 14px;
-  column-count: 2;
-  column-gap: 5px;
+  padding-top: 90px;
 }
 
 .item {
-  position: relative;
-  width: 100%;
-  padding-top: 5px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.item[data-macy-complete="1"] {
+  opacity: 1;
+}
+.item[data-macy-complete="1"]:nth-child(1n + 0) {
+  transition: .5s .25s;
+}
+.item[data-macy-complete="1"]:nth-child(2n + 0) {
+  transition: .5s .5s;
+}
+.item[data-macy-complete="1"]:nth-child(3n + 0) {
+  transition: .5s .75s;
+}
+.item[data-macy-complete="1"]:nth-child(4n + 0) {
+  transition: .5s 1s;
+}
+.item[data-macy-complete="1"]:nth-child(5n + 0) {
+  transition: .5s 1.25s;
+}
+.item[data-macy-complete="1"]:nth-child(6n + 0) {
+  transition: .5s 1.5s;
+}
+.item[data-macy-complete="1"]:nth-child(7n + 0) {
+  transition: .5s 1.75s;
+}
+.item[data-macy-complete="1"]:nth-child(8n + 0) {
+  transition: .5s 2s;
+}
+.item[data-macy-complete="1"]:nth-child(9n + 0) {
+  transition: .5s 2.25s;
+}
+.item[data-macy-complete="1"]:nth-child(10n + 0) {
+  transition: .5s 2.5s;
+}
+.item[data-macy-complete="1"]:nth-child(11n + 0) {
+  transition: .5s 2.75s;
+}
+.item[data-macy-complete="1"]:nth-child(12n + 0) {
+  transition: .5s 3s;
 }
 
 .item img {
@@ -135,6 +173,7 @@
   text-align: center;
   color: #E51877;
   opacity: 0;
+  line-height: 1.2;
   transition: .3s;
 }
 
@@ -156,7 +195,21 @@
   order: 4;
 }
 
+.portfolio-main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
+.portfolio-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-menu li {
+  padding: 5px;
+}
 
 nav {
   height: 90px;
@@ -239,10 +292,11 @@ nav {
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  background-color: #F9B232;
 }
 
 #menu li {
-  padding: 10px 0;
+  padding: 40px 0;
   transition-delay: 2s;
 }
 
@@ -258,7 +312,7 @@ nav {
 }
 
 .about {
-  margin-top: 90px;
+  padding-top: 90px;
 }
 
 .about p {
@@ -302,13 +356,12 @@ nav {
 .footer a {
   padding: 10px 0;
   color: #000000;
-  text-decoration: underline;
 }
 .contact {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 40px 0;
+  padding: 40px 5px;
 }
 .contact span {
   text-transform: uppercase;
@@ -361,6 +414,7 @@ nav {
     padding-top: 0;
     transform: translate(0);
     transition: transform 0 cubic-bezier(0.77,0.2,0.05,1.0);
+    background-color: transparent;
   }
   #menuToggle {
     display: flex;
@@ -371,18 +425,13 @@ nav {
     margin: 3px 11px;
     padding: 0;
     transition-delay: 0s;
-    border: 1px solid transparent;
-  }
-  #menu li:hover {
-    border-color: #000000;
-    transition: .3s;
   }
   .about {
     position: relative;
     display: grid;
     grid-template-columns: minmax(265px, 340px) minmax(265px, 340px);
     gap: 70px;
-    margin-top: 50px;
+    padding-top: 50px;
     justify-content: center;
     font-family: 'Bellota Text', cursive;
   }
@@ -434,15 +483,6 @@ nav {
     padding: 50px 0;
   }
   .gallery {
-    margin-top: 140px;
-  }
-  .column {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    column-gap: 14px;
-  }
-  .item {
-    padding-top: 14px;
+    padding-top: 140px;
   }
 }
