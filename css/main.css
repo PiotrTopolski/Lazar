@@ -77,7 +77,6 @@
   justify-content: center;
   width: 100%;
   max-width: 1100px;
-  height: 470px;
   background-color: #F9B232;
   margin: 0 auto;
 }
@@ -198,6 +197,11 @@
 .portfolio-main {
   max-width: 1440px;
   margin: 0 auto;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .portfolio-menu ul {
@@ -208,7 +212,7 @@
 }
 
 .portfolio-menu li {
-  padding: 5px;
+  padding: 5px 0;
 }
 
 nav {
@@ -312,11 +316,10 @@ nav {
 }
 
 .about {
-  padding-top: 90px;
+  padding: 90px 15px 0 15px;
 }
 
 .about p {
-  padding: 5px;
   margin-bottom: 20px;
 }
 
@@ -361,7 +364,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 40px 5px;
+  padding: 40px 0;
 }
 .contact span {
   text-transform: uppercase;
@@ -376,7 +379,92 @@ nav {
   margin-bottom: 10px;
 }
 
+.--portfolio .header__wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.header__back {
+  padding: 15px 0 10px 8px;
+  position: relative;
+}
+
+.header__back img {
+  height: 17px;
+}
+
+.header__portfolio-item img {
+  height: 65px;
+}
+.sub-gallery {
+  background-color: #fff;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.sub-gallery::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw;
+  z-index: -1;
+}
+.sub-gallery__header {
+  display: none;
+}
+.sub-gallery__wrapper {
+  overflow-y: scroll;
+  max-height: calc(100vh - 115px);
+  display: none;
+}
+
+.--active {
+  display: block !important;
+}
+.sub-gallery .header__wrapper {
+  background-color: #fff;
+}
+.sub-gallery .header__back {
+  padding: 40px 0;
+  cursor: pointer;
+}
+.sub-gallery .header__back img {
+  height: 30px;
+}
+.sub-gallery__top {
+  display: grid;
+  grid-template-columns: minmax(155px, 470px) minmax(40%, 1fr);
+  margin-bottom: 10px;
+  column-gap: 20px;
+}
+.top__img img {
+  display: block;
+  width: 100%;
+}
+.top__txt h2 {
+  color: #F9B232;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.top__txt span {
+  font-size: 14px;
+}
+.top__txt p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
 
 @media (min-width: 600px) {
   .header {
@@ -484,5 +572,14 @@ nav {
   }
   .gallery {
     padding-top: 140px;
+  }
+  .--portfolio .gallery {
+    padding-top: 100px;
+  }
+  .header__back {
+    margin-top: 20px;
+  }
+  .sub-gallery__top {
+    column-gap: 80px;
   }
 }
