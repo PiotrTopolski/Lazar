@@ -31,4 +31,4 @@ const masonry = new Macy({
   }
 })
 
-macy_instance.runOnImageLoad(function () { macy_instance.recalculate(true); }, true);
+// macy_instance.runOnImageLoad(function () { macy_instance.recalculate(true); }, true);
