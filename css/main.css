@@ -40,9 +40,6 @@
 .content.--pink-bg .header__wrapper {
   background-color: #ed62a3;
 }
-.content.--pink-bg #menu {
-  background-color: #ed62a3;
-}
 .header {
   position: fixed;
   top: 0;
@@ -296,7 +293,7 @@ nav {
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  background-color: #F9B232;
+  background-color: #ed62a3;
 }
 
 #menu li {
@@ -321,6 +318,7 @@ nav {
 
 .about p {
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .portfolio {
@@ -447,7 +445,7 @@ nav {
   display: grid;
   grid-template-columns: minmax(155px, 470px) minmax(40%, 1fr);
   margin-bottom: 10px;
-  column-gap: 20px;
+  grid-gap: 20px;
 }
 .top__img img {
   display: block;
@@ -518,7 +516,7 @@ nav {
     position: relative;
     display: grid;
     grid-template-columns: minmax(265px, 340px) minmax(265px, 340px);
-    gap: 70px;
+    grid-gap: 70px;
     padding-top: 50px;
     justify-content: center;
     font-family: 'Bellota Text', cursive;
@@ -580,6 +578,6 @@ nav {
     margin-top: 20px;
   }
   .sub-gallery__top {
-    column-gap: 80px;
+    grid-gap: 80px;
   }
 }
