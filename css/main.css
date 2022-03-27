@@ -104,6 +104,10 @@
   padding-top: 90px;
 }
 
+.--commercial .gallery {
+  padding-top: 190px;
+}
+
 .item {
   opacity: 0;
   cursor: pointer;
@@ -481,11 +485,12 @@ nav {
 .commercial-top__wrapper,
 .commercial-video__wrapper {
   max-width: 800px;
-  padding: 140px 15px;
+  padding: 120px 15px;
   margin: 0 auto;
 }
 .commercial-top__item {
   position: relative;
+  display: block;
   margin-bottom: 15px;
 }
 .commercial-top__item img {
@@ -493,15 +498,11 @@ nav {
   width: 100%;
 }
 .commercial-top__item div {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 35px 15px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding: 15px;
 }
 .commercial-top__item span {
   display: block;
