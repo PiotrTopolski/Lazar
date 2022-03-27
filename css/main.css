@@ -534,6 +534,18 @@ nav {
   margin-bottom: 20px;
 }
 
+.header__description {
+  display: flex;
+  flex-direction: column;
+  color: #E51877;
+  padding: 10px 15px;
+}
+
+.column.--commercial {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 @media (min-width: 440px) {
   .commercial-video__item iframe {
     min-height: 260px;
