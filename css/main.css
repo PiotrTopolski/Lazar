@@ -350,6 +350,7 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 20px 5px;
+  position: relative;
 }
 .footer span {
   padding: 10px 0;
@@ -357,6 +358,16 @@ nav {
 .footer a {
   padding: 10px 0;
   color: #000000;
+}
+.--commercial .footer::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -50vw;
+  width: 100vw;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: -1;
 }
 .contact {
   display: flex;
@@ -419,6 +430,9 @@ nav {
   margin-left: -50vw;
   z-index: -1;
 }
+.sub-gallery__item {
+  min-height: 100vh;
+}
 .sub-gallery__header {
   display: none;
 }
@@ -462,6 +476,68 @@ nav {
 .top__txt p {
   font-size: 14px;
   margin-bottom: 20px;
+}
+
+.commercial-top__wrapper,
+.commercial-video__wrapper {
+  max-width: 800px;
+  padding: 140px 15px;
+  margin: 0 auto;
+}
+.commercial-top__item {
+  position: relative;
+  margin-bottom: 15px;
+}
+.commercial-top__item img {
+  display: block;
+  width: 100%;
+}
+.commercial-top__item div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 35px 15px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.commercial-top__item span {
+  display: block;
+  color: #E51877;
+}
+.commercial-video {
+  position: relative;
+}
+.commercial-video::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -50vw;
+  width: 100vw;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+}
+.commercial-video__item {
+  width: 100%;
+}
+.commercial-video__item span {
+  color: #E51877;
+  margin-bottom: 10px;
+  display: block;
+}
+.commercial-video__item iframe {
+  width: 100%;
+  min-height: 210px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 440px) {
+  .commercial-video__item iframe {
+    min-height: 260px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -579,5 +655,15 @@ nav {
   }
   .sub-gallery__top {
     grid-gap: 80px;
+  }
+  .commercial-top__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .commercial-top__item {
+    max-width: 45%;
+  }
+  .commercial-video__item iframe {
+    min-height: 435px;
   }
 }
