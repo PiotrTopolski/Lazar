@@ -53,6 +53,9 @@
   justify-content: space-between;
   background-color: #F9B232;
 }
+.header__wrapper.--fashion {
+  background-color: #ffffff;
+}
 .logo {
   padding: 5px;
   height: 80px;
@@ -488,6 +491,10 @@ nav {
   max-width: 800px;
   padding: 120px 15px;
   margin: 0 auto;
+}
+.commercial-video__aside {
+  color: #F9B232 !important;
+  margin-bottom: 5px !important;
 }
 .commercial-top__item {
   position: relative;
