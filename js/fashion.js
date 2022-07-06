@@ -10,6 +10,7 @@ galleryList.forEach((item, id) => {
     const masonryMc = new Macy({
       container: `#sub-gallery-column-${id + 1}`,
       mobileFirst: true,
+      waitForImages: true,
       columns: 2,
       margin: {
         x: 4,
@@ -38,6 +39,7 @@ backBtn.addEventListener("click", () => {
 const masonryFs = new Macy({
   container: '.column.--fashion',
   mobileFirst: true,
+  waitForImages: true,
   columns: 2,
   margin: {
     x: 4,
@@ -60,3 +62,5 @@ const masonryFs = new Macy({
     }
   }
 })
+
+// macy_instance.runOnImageLoad(function () { macy_instance.recalculate(true); }, true);

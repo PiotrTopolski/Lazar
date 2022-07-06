@@ -5,6 +5,9 @@
   list-style: none;
   text-decoration: none;
 }
+body {
+  overflow-x: hidden;
+}
 .content {
   max-width: 2220px;
   margin: 0 auto;
@@ -17,6 +20,7 @@
 }
 .content.--orange-bg::before {
   content: "";
+
   position: absolute;
   width: 100vw;
   height: 100%;
@@ -112,11 +116,11 @@
 }
 
 .item {
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
 
-.item[data-macy-complete="1"] {
+/* .item[data-macy-complete="1"] {
   opacity: 1;
 }
 .item[data-macy-complete="1"]:nth-child(1n + 0) {
@@ -154,7 +158,7 @@
 }
 .item[data-macy-complete="1"]:nth-child(12n + 0) {
   transition: .5s 3s;
-}
+} */
 
 .item img {
   display: block;
@@ -526,14 +530,14 @@ nav {
   margin-left: -50vw;
   width: 100vw;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #E51877;
   z-index: -1;
 }
 .commercial-video__item {
   width: 100%;
 }
 .commercial-video__item span {
-  color: #E51877;
+  color: #F9B232;
   margin-bottom: 10px;
   display: block;
 }
@@ -658,12 +662,12 @@ nav {
   }
   .logo.--portfolio .logo__link img {
     max-width: 744px;
+    max-height: 100%;
   }
   .portfolio-menu ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 50px 0;
   }
   .gallery {
     padding-top: 140px;
@@ -682,7 +686,7 @@ nav {
     justify-content: space-between;
   }
   .commercial-top__item {
-    max-width: 45%;
+    max-width: 33%;
   }
   .commercial-video__item iframe {
     min-height: 435px;
