@@ -518,6 +518,12 @@ nav {
   margin: 0 auto;
 }
 
+.about__video span {
+  display: block;
+  text-align: center;
+  color: #f9b232;
+}
+
 @media (min-width: 440px) {
   .commercial-video__item iframe {
     min-height: 260px;
@@ -617,7 +623,7 @@ nav {
     padding: 180px 0 0 0;
   }
   .logo {
-    height: 230px;
+    height: 330px;
   }
   .logo.--portfolio .logo__link img {
     max-width: 744px;
@@ -650,5 +656,22 @@ nav {
   }
   .commercial-video__item iframe {
     min-height: 435px;
+  }
+}
+
+@media (min-width: 900px) {
+  .logo {
+    height: 430px;
+  }
+  .portfolio-menu li {
+    padding: 5px 0;
+    height: 90px;
+  }
+  .portfolio-menu li a {
+    height: 100%;
+    display: block;
+  }
+  .portfolio-menu li img {
+    height: 100%;
   }
 }
